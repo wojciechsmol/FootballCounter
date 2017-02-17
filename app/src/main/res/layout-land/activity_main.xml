@@ -7,5 +7,162 @@
     android:background="@drawable/bground_l"
     tools:context="com.example.android.footballcounter.MainActivity">
 
+    <!--TEAM A NAME AND GOAL BUTTON-->
+    <TextView
+        android:id="@+id/team_a"
+        style="@style/TeamName"
+        android:layout_centerVertical="true"
+        android:text="@string/team_a" />
+
+    <Button
+        android:id="@+id/goal_a"
+        style="@style/Button.Landscape"
+        android:layout_below="@id/team_a"
+        android:text="@string/goal" />
+
+    <!--SCORES AND CARDS MAIN HOLDER-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <!--SCORE AND CARDS TEAM_A-->
+        <LinearLayout
+            style="@style/LayoutScoreCards.Landscape"
+            android:layout_marginRight="20dp">
+
+            <!--Red CARD VIEW TEAM A-->
+            <LinearLayout style="@style/LayoutCard.Landscape">
+
+                <!--RED CARD ICON AND NUMBER TEAM A-->
+                <LinearLayout style="@style/LayoutCardNumber">
+
+                    <!--RED CARDS TEAM A COUNTER-->
+                    <TextView
+                        style="@style/NumberText"
+                        android:textSize="@dimen/card_count" />
+                    <!--RED CARD TEAM A ICON-->
+                    <ImageView
+                        style="@style/CardIcon.Landscape"
+                        android:src="@drawable/red_card" />
+
+                </LinearLayout>
+                <!--RED CARD TEAM A BUTTON +-->
+                <Button style="@style/ButtonPlus" />
+            </LinearLayout>
+
+
+            <!--SCORE TEAM A-->
+            <TextView
+                android:id="@+id/team_a_score"
+                style="@style/NumberText.Landscape"
+                android:textSize="@dimen/font_score" />
+
+            <!--YELLOW CARD VIEW TEAM A-->
+            <LinearLayout style="@style/LayoutCard.Landscape">
+
+                <!--YELLOW CARD ICON AND NUMBER TEAM A-->
+                <LinearLayout style="@style/LayoutCardNumber">
+
+                    <!--YELLOW CARDS TEAM A COUNTER-->
+                    <TextView
+                        style="@style/NumberText"
+                        android:textSize="@dimen/card_count" />
+                    <!--YELLOW CARD TEAM A ICON-->
+                    <ImageView
+                        style="@style/CardIcon.Landscape"
+                        android:src="@drawable/yellow_card" />
+
+                </LinearLayout>
+                <!--YELLOW CARD TEAM A BUTTON +-->
+                <Button style="@style/ButtonPlus" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!--SCORE AND CARDS TEAM_B-->
+        <LinearLayout
+            style="@style/LayoutScoreCards.Landscape"
+            android:layout_marginLeft="20dp">
+
+            <!--Red CARD VIEW TEAM B-->
+            <LinearLayout style="@style/LayoutCard.Landscape">
+
+                <!--RED CARD ICON AND NUMBER TEAM B-->
+                <LinearLayout style="@style/LayoutCardNumber">
+
+                    <!--RED CARD TEAM B ICON-->
+                    <ImageView
+                        style="@style/CardIcon.Landscape"
+                        android:src="@drawable/red_card" />
+                    <!--RED CARDS TEAM B COUNTER-->
+                    <TextView
+                        style="@style/NumberText"
+                        android:textSize="@dimen/card_count" />
+
+                </LinearLayout>
+                <!--RED CARD TEAM B BUTTON +-->
+                <Button style="@style/ButtonPlus" />
+            </LinearLayout>
+
+
+            <!--SCORE TEAM B-->
+            <TextView
+                android:id="@+id/team_b_score"
+                style="@style/NumberText.Landscape"
+                android:textSize="@dimen/font_score" />
+
+            <!--YELLOW CARD VIEW TEAM B-->
+            <LinearLayout style="@style/LayoutCard.Landscape">
+
+                <!--YELLOW CARD ICON AND NUMBER TEAM B-->
+                <LinearLayout style="@style/LayoutCardNumber">
+
+
+                    <!--YELLOW CARD TEAM B ICON-->
+                    <ImageView
+                        style="@style/CardIcon.Landscape"
+                        android:src="@drawable/yellow_card" />
+                    <!--YELLOW CARDS TEAM B COUNTER-->
+                    <TextView
+                        style="@style/NumberText"
+                        android:textSize="@dimen/card_count" />
+
+                </LinearLayout>
+                <!--YELLOW CARD TEAM B BUTTON +-->
+                <Button style="@style/ButtonPlus" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--TEAM B GOAL BUTTON AND TEXT-->
+
+    <TextView
+        android:id="@+id/team_b"
+        style="@style/TeamName"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="@string/team_b" />
+
+    <Button
+        android:id="@+id/goal_b"
+        style="@style/Button"
+        android:layout_above="@id/team_b"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/goal" />
+    <!--NEW MATCH (RESET) BUTTON-->
+    <Button
+        android:id="@+id/reset"
+        style="@style/Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/new_match" />
+
 
 </RelativeLayout>

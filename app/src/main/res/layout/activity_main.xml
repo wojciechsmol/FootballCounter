@@ -7,279 +7,144 @@
     android:background="@drawable/bground"
     tools:context="com.example.android.footballcounter.MainActivity">
 
+    <!--TEAM A NAME AND GOAL BUTTON-->
     <TextView
         android:id="@+id/team_a"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/TeamName"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="#73212121"
-        android:includeFontPadding="true"
-        android:maxLines="1"
-        android:padding="2dp"
-        android:text="Team A"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/team_name"
-        android:textStyle="bold" />
-
+        android:text="@string/team_a" />
 
     <Button
         android:id="@+id/goal_a"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:layout_below="@id/team_a"
-        android:layout_centerHorizontal="true"
-        android:text="Goal!!!"
-        android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/goal_button"
-        android:textStyle="bold"/>
+        android:text="@string/goal" />
 
-
+    <!--SCORES AND CARDS MAIN HOLDER-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:orientation="vertical">
 
-        <!--SCORE AND CARD TEAM_A-->
 
+        <!--SCORE AND CARDS TEAM_A-->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="#73212121"
-            android:orientation="horizontal">
+            style="@style/LayoutScoreCards"
+            android:layout_marginBottom="10dp">
 
             <!--YELLOW CARD VIEW TEAM A-->
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+            <LinearLayout style="@style/LayoutCard">
 
                 <!--YELLOW CARD ICON AND NUMBER TEAM A-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+                <LinearLayout style="@style/LayoutCardNumber">
 
-
+                    <!--YELLOW CARDS TEAM A COUNTER-->
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:includeFontPadding="true"
-                        android:maxLines="1"
-                        android:text="@string/zero"
-                        android:textColor="@android:color/white"
-                        android:textSize="35sp" />
+                        style="@style/NumberText"
+                        android:textSize="@dimen/card_count" />
+
+                    <!--YELLOW CARD TEAM A ICON-->
                     <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:paddingTop="3dp"
-                        android:adjustViewBounds="true"
+                        style="@style/CardIcon"
                         android:src="@drawable/yellow_card" />
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="0dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="+"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"/>
+                <!--YELLOW CARD TEAM A BUTTON +-->
+                <Button style="@style/ButtonPlus" />
             </LinearLayout>
 
+            <!--SCORE TEAM A-->
             <TextView
                 android:id="@+id/team_a_score"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:includeFontPadding="true"
-                android:maxLines="1"
-                android:text="@string/zero"
-                android:textColor="@android:color/white"
+                style="@style/NumberText"
                 android:textSize="@dimen/font_score" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+            <!--RED CARD VIEW TEAM A-->
+            <LinearLayout style="@style/LayoutCard">
 
-                <!--YELLOW CARD ICON AND NUMBER TEAM A-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+                <!--RED CARD ICON AND NUMBER TEAM A-->
+                <LinearLayout style="@style/LayoutCardNumber">
 
+                    <!--RED CARD ICON TEAM A-->
                     <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:paddingTop="3dp"
-                        android:adjustViewBounds="true"
+                        style="@style/CardIcon"
                         android:src="@drawable/red_card" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:includeFontPadding="true"
-                        android:maxLines="1"
-                        android:text="@string/zero"
-                        android:textColor="@android:color/white"
-                        android:textSize="35sp" />
 
+                    <!--RED CARDS TEAM A COUNTER-->
+                    <TextView
+                        style="@style/NumberText"
+                        android:textSize="@dimen/card_count" />
                 </LinearLayout>
 
+                <!--RED CARD TEAM A BUTTON +-->
                 <Button
-                    android:layout_width="40dp"
-                    android:layout_height="0dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="+"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"/>
+                    style="@style/ButtonPlus" />
             </LinearLayout>
-
-
         </LinearLayout>
 
+
+        <!--NEW MATCH (RESET) BUTTON-->
         <Button
             android:id="@+id/reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/team_a"
+            style="@style/Button"
             android:layout_gravity="center_horizontal"
-            android:text="New Match"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/goal_button"
-            android:textStyle="bold"/>
+            android:text="@string/new_match" />
+
 
         <!--SCORE AND CARDS TEAM B-->
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="#73212121"
-            android:orientation="horizontal">
+            style="@style/LayoutScoreCards"
+            android:layout_marginTop="10dp">
 
-            <!--YELLOW CARD VIEW TEAM A-->
+            <!--YELLOW CARD VIEW TEAM B-->
+            <LinearLayout style="@style/LayoutCard">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                <!--YELLOW CARD ICON AND NUMBER TEAM B-->
+                <LinearLayout style="@style/LayoutCardNumber">
 
-                <!--YELLOW CARD ICON AND NUMBER TEAM A-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-
+                    <!--YELLOW CARDS TEAM B COUNTER-->
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:includeFontPadding="true"
-                        android:maxLines="1"
-                        android:text="@string/zero"
-                        android:textColor="@android:color/white"
-                        android:textSize="35sp" />
+                        style="@style/NumberText"
+                        android:textSize="@dimen/card_count" />
+
+                    <!--YELLOW CARD TEAM B ICON-->
                     <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:paddingTop="3dp"
-                        android:adjustViewBounds="true"
+                        style="@style/CardIcon"
                         android:src="@drawable/yellow_card" />
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="40dp"
-                    android:layout_height="0dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="+"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"/>
+                <!--YELLOW CARD TEAM B BUTTON +-->
+                <Button style="@style/ButtonPlus" />
             </LinearLayout>
 
+            <!--SCORE TEAM B-->
             <TextView
                 android:id="@+id/team_b_score"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:includeFontPadding="true"
-                android:maxLines="1"
-                android:text="@string/zero"
-                android:textColor="@android:color/white"
+                style="@style/NumberText"
                 android:textSize="@dimen/font_score" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+            <!--RED CARD VIEW TEAM B-->
+            <LinearLayout style="@style/LayoutCard">
 
-                <!--YELLOW CARD ICON AND NUMBER TEAM A-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+                <!--RED CARD ICON AND NUMBER TEAM B-->
+                <LinearLayout style="@style/LayoutCardNumber">
 
+                    <!--RED CARD ICON TEAM B-->
                     <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:paddingTop="3dp"
-                        android:adjustViewBounds="true"
+                        style="@style/CardIcon"
                         android:src="@drawable/red_card" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:includeFontPadding="true"
-                        android:maxLines="1"
-                        android:text="@string/zero"
-                        android:textColor="@android:color/white"
-                        android:textSize="35sp" />
 
+                    <!--RED CARDS TEAM B COUNTER-->
+                    <TextView
+                        style="@style/NumberText"
+                        android:textSize="@dimen/card_count" />
                 </LinearLayout>
 
+                <!--RED CARD TEAM B BUTTON +-->
                 <Button
-                    android:layout_width="40dp"
-                    android:layout_height="0dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="+"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"/>
+                    style="@style/ButtonPlus" />
             </LinearLayout>
-
-
         </LinearLayout>
 
     </LinearLayout>
@@ -288,28 +153,14 @@
 
     <TextView
         android:id="@+id/team_b"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        style="@style/TeamName"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="#73212121"
-        android:includeFontPadding="true"
-        android:maxLines="1"
-        android:padding="2dp"
-        android:text="Team B"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/team_name"
-        android:textStyle="bold" />
+        android:layout_alignParentBottom="true"
+        android:text="@string/team_b" />
 
     <Button
         android:id="@+id/goal_b"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:layout_above="@id/team_b"
-        android:layout_centerHorizontal="true"
-        android:text="GOAL!!!"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/goal_button"
-        android:textStyle="bold"/>
+        android:text="@string/goal" />
 </RelativeLayout>
