@@ -18,6 +18,7 @@
         android:id="@+id/goal_a"
         style="@style/Button.Landscape"
         android:layout_below="@id/team_a"
+        android:onClick="addScoreTeamB"
         android:text="@string/goal" />
 
     <!--SCORES AND CARDS MAIN HOLDER-->
@@ -49,7 +50,9 @@
 
                 </LinearLayout>
                 <!--RED CARD TEAM A BUTTON +-->
-                <Button style="@style/ButtonPlus" />
+                <Button
+                    style="@style/ButtonPlus"
+                    android:onClick="addRcardsTeamA" />
             </LinearLayout>
 
 
@@ -76,7 +79,9 @@
 
                 </LinearLayout>
                 <!--YELLOW CARD TEAM A BUTTON +-->
-                <Button style="@style/ButtonPlus" />
+                <Button
+                    style="@style/ButtonPlus"
+                    android:onClick="addYcardsTeamA" />
             </LinearLayout>
 
         </LinearLayout>
@@ -104,7 +109,9 @@
 
                 </LinearLayout>
                 <!--RED CARD TEAM B BUTTON +-->
-                <Button style="@style/ButtonPlus" />
+                <Button
+                    style="@style/ButtonPlus"
+                    android:onClick="addRcardsTeamB" />
             </LinearLayout>
 
 
@@ -132,7 +139,9 @@
 
                 </LinearLayout>
                 <!--YELLOW CARD TEAM B BUTTON +-->
-                <Button style="@style/ButtonPlus" />
+                <Button
+                    style="@style/ButtonPlus"
+                    android:onClick="addYcardsTeamB" />
             </LinearLayout>
 
         </LinearLayout>
@@ -154,10 +163,12 @@
         android:layout_above="@id/team_b"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:onClick="addScoreTeamA"
         android:text="@string/goal" />
     <!--NEW MATCH (RESET) BUTTON-->
     <Button
         android:id="@+id/reset"
+        android:onClick="reset"
         style="@style/Button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"

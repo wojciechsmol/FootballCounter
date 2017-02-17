@@ -15,9 +15,10 @@
         android:text="@string/team_a" />
 
     <Button
-        android:id="@+id/goal_a"
+        android:id="@+id/goal_team_a"
         style="@style/Button"
         android:layout_below="@id/team_a"
+        android:onClick="addScoreTeamB"
         android:text="@string/goal" />
 
     <!--SCORES AND CARDS MAIN HOLDER-->
@@ -41,6 +42,7 @@
 
                     <!--YELLOW CARDS TEAM A COUNTER-->
                     <TextView
+                        android:id="@+id/y_cards_team_a"
                         style="@style/NumberText"
                         android:textSize="@dimen/card_count" />
 
@@ -51,7 +53,9 @@
                 </LinearLayout>
 
                 <!--YELLOW CARD TEAM A BUTTON +-->
-                <Button style="@style/ButtonPlus" />
+                <Button
+                    style="@style/ButtonPlus"
+                    android:onClick="addYcardsTeamA" />
             </LinearLayout>
 
             <!--SCORE TEAM A-->
@@ -73,13 +77,15 @@
 
                     <!--RED CARDS TEAM A COUNTER-->
                     <TextView
+                        android:id="@+id/r_cards_team_a"
                         style="@style/NumberText"
                         android:textSize="@dimen/card_count" />
                 </LinearLayout>
 
                 <!--RED CARD TEAM A BUTTON +-->
                 <Button
-                    style="@style/ButtonPlus" />
+                    style="@style/ButtonPlus"
+                    android:onClick="addRcardsTeamA" />
             </LinearLayout>
         </LinearLayout>
 
@@ -87,6 +93,7 @@
         <!--NEW MATCH (RESET) BUTTON-->
         <Button
             android:id="@+id/reset"
+            android:onClick="reset"
             style="@style/Button"
             android:layout_gravity="center_horizontal"
             android:text="@string/new_match" />
@@ -105,6 +112,7 @@
 
                     <!--YELLOW CARDS TEAM B COUNTER-->
                     <TextView
+                        android:id="@+id/y_cards_team_b"
                         style="@style/NumberText"
                         android:textSize="@dimen/card_count" />
 
@@ -115,7 +123,9 @@
                 </LinearLayout>
 
                 <!--YELLOW CARD TEAM B BUTTON +-->
-                <Button style="@style/ButtonPlus" />
+                <Button
+                    style="@style/ButtonPlus"
+                    android:onClick="addYcardsTeamB" />
             </LinearLayout>
 
             <!--SCORE TEAM B-->
@@ -137,13 +147,15 @@
 
                     <!--RED CARDS TEAM B COUNTER-->
                     <TextView
+                        android:id="@+id/r_cards_team_b"
                         style="@style/NumberText"
                         android:textSize="@dimen/card_count" />
                 </LinearLayout>
 
                 <!--RED CARD TEAM B BUTTON +-->
                 <Button
-                    style="@style/ButtonPlus" />
+                    style="@style/ButtonPlus"
+                    android:onClick="addRcardsTeamB" />
             </LinearLayout>
         </LinearLayout>
 
@@ -154,13 +166,14 @@
     <TextView
         android:id="@+id/team_b"
         style="@style/TeamName"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:text="@string/team_b" />
 
     <Button
         android:id="@+id/goal_b"
         style="@style/Button"
         android:layout_above="@id/team_b"
+        android:onClick="addScoreTeamA"
         android:text="@string/goal" />
 </RelativeLayout>
