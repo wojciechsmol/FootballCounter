@@ -173,7 +173,9 @@
     <Button
         android:id="@+id/goal_b"
         style="@style/Button"
-        android:layout_above="@id/team_b"
         android:onClick="addScoreTeamA"
-        android:text="@string/goal" />
+        android:text="@string/goal"
+        android:layout_above="@+id/team_b"
+        android:layout_alignLeft="@+id/goal_team_a"
+        android:layout_alignStart="@+id/goal_team_a" />
 </RelativeLayout>
